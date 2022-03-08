@@ -54,35 +54,34 @@ public class Main {   //Everything in Java is inside a class, Squigs, Squigalies
             case 2:
                 //Using a Class: AP CSA Unit 2
                 //Run Printy main method with null parameter
-                Printy.main(null);
+                System.out.println("You chose printy");
                 break;
             case 3:
                 //Using a Class: AP CSA Unit 2
                 //Run MonkeyLoop() constructor and run a method from temporary object, defined in class
-                new MonkeyLoop().printPoem();
+                System.out.println("You chose loopy");
                 break;
             case 4:
                 //Using a Class: AP CSA Unit 2
                 //Run MonkeyList() constructor and run a method from temporary object, defined in class
-                new MonkeyList().print();
+                System.out.println("You chose classy print");
                 break;
             case 5:
                 //Using a Class: AP CSA Unit 2
                 //Create object to run methods from Classy.java
-                MonkeyList ml = new MonkeyList();
-                ml.print();
-                ml.printPoem();
+                System.out.println("You chose classy poem");
+
                 break;
 
             case 6:
                 //Using a Class: AP CSA Unit 2
                 //Run Biny main method with null parameter
-                Biny.main(null);
+                System.out.println("You chose binary");
                 break;
 
             case 7:
                 //Run Termy main method with null parameter
-                Termy.main(null);
+                System.out.println("You chose termy");
                 break;
                     
             default:
