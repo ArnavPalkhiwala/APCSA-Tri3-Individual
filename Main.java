@@ -5,9 +5,9 @@ import java.util.ArrayList;
 public class Main {   
   
     static public void main(String[] args)  {  
-        menu(8); 
         Swap swap = new Swap();
-      
+        swap.run(10, 90);
+        menu(8); 
     } 
 
     //Menu Code Below
@@ -57,7 +57,7 @@ public class Main {
         System.out.println("Not a number");
       }
        
-      menu();
+      menu(8);
     }
 
 }
