@@ -5,3 +5,5 @@
 [AP Exam Plan](https://arnavpalkhiwala.github.io/APCSA-Tri3-Individual/apexam)
 <br>
 [Data Structures Code and GitHub Tangibles](https://arnavpalkhiwala.github.io/APCSA-Tri3-Individual/datastructures)
+<br>
+[Review Ticket](https://github.com/ArnavPalkhiwala/APCSA-Tri3-Individual/issues/1)
