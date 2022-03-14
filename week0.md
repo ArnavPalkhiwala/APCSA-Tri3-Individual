@@ -1,6 +1,6 @@
 # Week 0 Everything Compiled Here
 
-_[Review Ticket](https://github.com/ArnavPalkhiwala/APCSA-Tri3-Individual/issues/1)_
+# **_[Review Ticket](https://github.com/ArnavPalkhiwala/APCSA-Tri3-Individual/issues/1)_**
 <br>
 # [Tech Talk 0 - Data Structures](https://arnavpalkhiwala.github.io/APCSA-Tri3-Individual/techtalk)
 Important Notes and Takeaways:
