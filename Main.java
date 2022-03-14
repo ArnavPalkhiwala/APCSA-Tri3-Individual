@@ -5,8 +5,16 @@ import java.util.ArrayList;
 public class Main {   
   
     static public void main(String[] args)  {  
+        System.out.println("Challenge 1");
+        int[][] keypad = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 }, {0} };      
+        Matrix m = new Matrix(keypad);
+        System.out.println(m);
+        System.out.println("");
+        System.out.println("Challenge 2");
         Swap swap = new Swap();
         swap.run(10, 90);
+        System.out.println("Challenge 3");
+        System.out.println("");
         menu(8); 
     } 
 
