@@ -1,4 +1,4 @@
-# Week 0 Everything Compiled Here
+# Week 0 
 
 # **_[Review Ticket](https://github.com/ArnavPalkhiwala/APCSA-Tri3-Individual/issues/1)_**
 <br>
