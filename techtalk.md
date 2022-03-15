@@ -1,4 +1,4 @@
-# Tech Talk Notes and Plans
+# Tech Talk Notes
 This contains my individual notes and plans for each tech talk we have this trimester. It is nicely organized and easy to read and understand.
 
 # [Tech Talk 0 - Data Structures](https://github.com/nighthawkcoders/nighthawk_csa/wiki/Tri-3:-Tech-Talk-0---Data-Structures)
