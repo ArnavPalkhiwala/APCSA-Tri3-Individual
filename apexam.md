@@ -1,4 +1,4 @@
-# Test Prep Plans and Participation for Success on AP exam 
+# Test Prep Plans  
 * Something that will be crucial for me to do well on AP exams is participating well on the assignments assigned to us in class and focusing on understanding as much about Java code as it is possible for me because it will all come in handy later when I do take the exam 
 * Also, I will begin to review each of the progress check multiple-choice (MC) that we did in first trimester because they did a great job of testing us on relevant content that will be on the AP exam in the future 
 * I have my journal also with a focus on the questions that I missed, so being able to check over that and do some revisions to make sure I do not get the same questions wrong multiple times
