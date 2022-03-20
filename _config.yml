@@ -1,3 +1,7 @@
-theme: jekyll-theme-minima
+theme: minima
+
+heading:
+  index.md
+  week0.md
 
 
