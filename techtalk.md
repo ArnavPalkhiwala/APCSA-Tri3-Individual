@@ -1,6 +1,17 @@
 # Tech Talk Notes
 This contains my individual notes and plans for each tech talk we have this trimester. It is nicely organized and easy to read and understand.
 
+# [Tech Talk 1 - Linked Lists](https://github.com/nighthawkcoders/nighthawk_csa/wiki/Tri-3:-Tech-Talk-1:-Linked-Lists-Part-2)
+Important Notes and Takeaways:
+* Linked Lists are the foundation for Stacks and Queues (two important data stuctures that are used in Java)
+* Java Generic T is a variable type often used which is easy because it can adapt to different variable types and is not fixated into being one specifically
+* For merge sorting, it is important to look at the queue before the queuing starts and then dequeue at the end for simplicity purposes
+* Linked list example: <img width="497" alt="Screen Shot 2022-03-20 at 10 37 22 PM" src="https://user-images.githubusercontent.com/25650329/159210039-268148ca-9b19-49cd-bcc0-eef205c3b9ca.png">
+* <img width="959" alt="Screen Shot 2022-03-20 at 10 37 54 PM" src="https://user-images.githubusercontent.com/25650329/159210072-bded06b5-5a1b-42b5-803d-b269aac29bb7.png">
+* Pay attention to getters and setters and ensure that knowledge is all updated and well-versed because it can come in handy at many points
+* Queues and Stacks are the main focus, so it is important to learn to use them and manipulate them as well.
+
+
 # [Tech Talk 0 - Data Structures](https://github.com/nighthawkcoders/nighthawk_csa/wiki/Tri-3:-Tech-Talk-0---Data-Structures)
 Important Notes and Takeaways:
 * Data structures are used to organize data which are more sequences or tables of values rather than a single value
