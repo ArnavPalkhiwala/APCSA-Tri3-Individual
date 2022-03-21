@@ -21,3 +21,9 @@ Describe Java Generic T
 * Since it is an Object, anything can be passed in instead like Integer, String
 * This is very flexible and easy to use as a result
   
+<div class="frq-content" style="text-align: center;">
+                <p>View it on repl <u><a style="color: blue" target="_blank"
+                                         href="https://replit.com/@ArnavPalkhiwala/APCSAFRQS">here</a></u></p>
+                <iframe height="400px" width="100%" src="https://replit.com/@ArnavPalkhiwala/APCSA-Tri3-Individua?lite=true"
+                        scrolling="no" frameborder="yes" allowtransparency="true" allowfullscreen="true"></iframe>
+            </div><br>
