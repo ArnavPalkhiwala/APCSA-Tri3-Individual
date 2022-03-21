@@ -21,46 +21,48 @@ public class Challenge1{
     LinkedList<Object> overallQueue = new LinkedList<>();
     overallQueue.add("Seven");
 
+    //Checking if is add or delete
     if(choice == 1){
       boolean stop = false;
       while(!stop){
         System.out.print("Add or delete? ");
-        
+
+        //checking if this is add
         if(s.next().equalsIgnoreCase("Add")){
           System.out.println("Add to queue");
-          overallQueue.add(s.next());
-          System.out.println("Current queue: " + overallQueue);
-          System.out.println("Word count " + overallQueue.size());
+          overallQueue.add(s.next()); //getting the value user wanted added
+          System.out.println("Current queue: " + overallQueue); //printing current queue
+          System.out.println("Word count " + overallQueue.size()); //printing word count
         }
 
-        else{
-          overallQueue.remove();
-          System.out.println("Current queue: " + overallQueue);
-          System.out.println("Word count " + overallQueue.size());
+        else{ //if not add
+          overallQueue.remove(); //removing from queue
+          System.out.println("Current queue: " + overallQueue); //printing current queue
+          System.out.println("Word count " + overallQueue.size()); //printing word count
         }
 
-        System.out.println("Again? Type N to stop");
+        System.out.println("Again? Type N to stop"); //check for conntinuation 
         if(s.next().equals("N")){
-          stop = true;
+          stop = true; //stop here
         }
       }
     }
 
-    if(choice == 3){
+    if(choice == 3){ //merge sort
       System.out.println("Hello");
       
-      Queue<Object> queue1 = new LinkedList<>(); 
+      Queue<Object> queue1 = new LinkedList<>(); //using linked list
       queue1.add(1);
-      queue1.add(4);
+      queue1.add(4);  //adding to queue
       queue1.add(5);
       queue1.add(8);
       queue1.add("nil");
 
-      System.out.println("Queue 1: " + queue1);
+      System.out.println("Queue 1: " + queue1); //printing queue1
 
       Queue<Object> queue2 = new LinkedList<>(); 
       queue2.add(2);
-      queue2.add(3);
+      queue2.add(3);//adding to queue
       queue2.add(6);
       queue2.add(7);
       queue2.add("nil");
@@ -93,7 +95,7 @@ public class Challenge1{
       //   }
       // }
     
-      System.out.println("Merge sorted queue " + queue3);
+      System.out.println("Merge sorted queue " + queue3); //sorted queue
 
       run();
 
@@ -101,7 +103,7 @@ public class Challenge1{
 
     if(choice == 4){
 
-      Stack<Integer> stack = new Stack<>();
+      Stack<Integer> stack = new Stack<>(); //making stack
       Queue<Integer> queue = new LinkedList<>(); 
       queue.add(1);
       queue.add(2);
@@ -112,14 +114,14 @@ public class Challenge1{
       int length = queue.size(); 
 
       for (int i = 0; i < length; i++ ) { 
-        stack.push(queue.poll());
+        stack.push(queue.poll()); //adding to stack
       }
       
       for (int i = 0; i < length; i++ ) { 
-        queue.add(stack.pop());
+        queue.add(stack.pop()); //readding to queue
       }
       
-      System.out.println("Reversed queue" + queue);
+      System.out.println("Reversed queue" + queue); //reverse que
 
       run();
     }
