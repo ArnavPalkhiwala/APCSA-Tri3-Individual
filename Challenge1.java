@@ -33,7 +33,7 @@ public class Challenge1{
           System.out.println("Word count " + overallQueue.size());
         }
 
-        if(s.next().equalsIgnoreCase("delete")){
+        else{
           overallQueue.remove();
           System.out.println("Current queue: " + overallQueue);
           System.out.println("Word count " + overallQueue.size());
