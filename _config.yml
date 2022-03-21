@@ -1,6 +1,6 @@
 theme: minima
 
-heading:
+header_pages:
   - index.md
   - techtalk.md
   - week0.md
