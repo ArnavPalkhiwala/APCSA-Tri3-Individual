@@ -1,6 +1,6 @@
 # Week 1
 
-# **_[Review Ticket](https://github.com/ArnavPalkhiwala/APCSA-Tri3-Individual/issues/1)_**
+# **_[Review Ticket](https://github.com/ArnavPalkhiwala/APCSA-Tri3-Individual/issues/2)_**
 <br>
 
 # [Data Structures Code and GitHub Tangibles](https://arnavpalkhiwala.github.io/APCSA-Tri3-Individual/datastructures)
