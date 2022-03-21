@@ -14,14 +14,36 @@ public class Challenge1{
 
     Scanner s = new Scanner(System.in);
     
-    System.out.println("1 for adding elements to queue, 2 for deleting, 3 for merging queues, 4 for reversing queues with stack, and 5 to exit ");
+    System.out.println("1 for adding elements to queue or deleting, 3 for merging queues, 4 for reversing queues with stack, and 5 to exit ");
 
     int choice = s.nextInt();
+    
+    LinkedList<Object> overallQueue = new LinkedList<>();
+    overallQueue.add("Seven");
 
     if(choice == 1){
-      static LinkedList<String> queue = new LinkedList<>();
-      
+      boolean stop = false;
+      while(!stop){
+        System.out.print("Add or delete? ");
+        
+        if(s.next().equalsIgnoreCase("Add")){
+          System.out.println("Add to queue");
+          overallQueue.add(s.next());
+          System.out.println("Current queue: " + overallQueue);
+          System.out.println("Word count " + overallQueue.size());
+        }
 
+        if(s.next().equalsIgnoreCase("delete")){
+          overallQueue.remove();
+          System.out.println("Current queue: " + overallQueue);
+          System.out.println("Word count " + overallQueue.size());
+        }
+
+        System.out.println("Again? Type N to stop");
+        if(s.next().equals("N")){
+          stop = true;
+        }
+      }
     }
 
     if(choice == 3){
@@ -46,7 +68,6 @@ public class Challenge1{
       Queue<Object> queue3 = new LinkedList<>(); 
       System.out.println("Queue 2: " + queue2);
 
-     
       
       // while (queue1.size() > 0 || queue2.size() > 0) {
       //   if (queue1.size() == 0) {
@@ -73,6 +94,9 @@ public class Challenge1{
       // }
     
       System.out.println("Merge sorted queue " + queue3);
+
+      run();
+
     }
 
     if(choice == 4){
@@ -96,6 +120,8 @@ public class Challenge1{
       }
       
       System.out.println("Reversed queue" + queue);
+
+      run();
     }
 
     else{
