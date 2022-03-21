@@ -7,7 +7,7 @@
 
 | Week | Code Snippets on Problems Solution | Links to GitHub Code Snippets | Replit for Runtime| 
 | ----- | ----- | ----- | ----- |
-|     1|[Linked Here](https://github.com/ArnavPalkhiwala/APCSA-Tri3-Individual/blob/main/Challenge1.java)| [Linked here for challenge 2 (swap)](https://github.com/ArnavPalkhiwala/APCSA-Tri3-Individual/blob/main/Challenge1.java#L5-L12)| [Linked here](https://replit.com/@ArnavPalkhiwala/APCSA-Tri3-Individual#.replit)
+|     1|[Linked Here](https://github.com/ArnavPalkhiwala/APCSA-Tri3-Individual/blob/main/Challenge1.java)| [Linked here for challenges (swap)](https://github.com/ArnavPalkhiwala/APCSA-Tri3-Individual/blob/main/Challenge1.java#L5-L12)| [Linked here](https://replit.com/@ArnavPalkhiwala/APCSA-Tri3-Individual#.replit)
 
 Describe Linked Lists:
 * Linked lists are data structures with objects of the same type
