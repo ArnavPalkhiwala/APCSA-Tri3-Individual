@@ -1,7 +1,9 @@
 theme: minima
 
 heading:
-  index.md
-  week0.md
+  - index.md
+  - techtalk.md
+  - week0.md
+  - week1.md
 
 
