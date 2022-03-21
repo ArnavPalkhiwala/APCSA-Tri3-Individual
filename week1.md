@@ -23,7 +23,7 @@ Describe Java Generic T
   
 <div class="frq-content" style="text-align: center;">
                 <p>View it on repl <u><a style="color: blue" target="_blank"
-                                         href="https://replit.com/@ArnavPalkhiwala/APCSAFRQS">here</a></u></p>
-                <iframe height="400px" width="100%" src="https://replit.com/@ArnavPalkhiwala/APCSA-Tri3-Individua?lite=true"
+                                         href="https://replit.com/@ArnavPalkhiwala/APCSA-Tri3-Individual-1">here</a></u></p>
+                <iframe height="400px" width="100%" src="https://replit.com/@ArnavPalkhiwala/APCSA-Tri3-Individual-1lite=true"
                         scrolling="no" frameborder="yes" allowtransparency="true" allowfullscreen="true"></iframe>
             </div><br>
