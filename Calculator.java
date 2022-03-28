@@ -12,16 +12,20 @@ public class Calculator{
   
   ArrayList<String> tokens;
 
+  private Double finalAnswer;
+
   
   public Calculator(String expression) {
- 
-      this.expression = expression;
+  
+    System.out.println("Here is the calculator");
     
-      this.termTokenizer();
+    this.expression = expression;
+    
+    this.termTokenizer();         // parse expression into terms
 
-      this.tokensToReversePolishNotation();
+    this.tokensToReversePolishNotation();         // place terms into reverse polish notation
 
-      this.rpnToResult();
+    this.rpnToResult();         // calculate reverse polish notation
     }
   
     private boolean isOperator(String token) {
@@ -39,7 +43,8 @@ public class Calculator{
 
       this.reverse_polish = new ArrayList<>();
 
-      Stack tokenStack = new Stack();
+      LinkedList<String> tokenList = new LinkedList<>();
+      Stack tokenStack = new Stack(tokenList);
       for (String token : tokens) {
         switch (token) {
 
@@ -49,7 +54,7 @@ public class Calculator{
             
           case ")":
             while (tokenStack.peek() != null && !tokenStack.peek().equals("(")){
-              reverse_polish.add( (String)tokenStack.peak());
+              reverse_polish.add((String)tokenStack.peak());
               tokenStack.pop();
             }
               tokenStack.pop();
@@ -65,10 +70,11 @@ public class Calculator{
                 
           case "%":
                    
-          while (tokenStack.peek() != null && isOperator((String) tokenStack.peek())){
+          while (tokenStack.peek() != null && tokenStack.size() > 0 && isOperator((String) tokenStack.peek())){
             
             if (isPrecedent(token, (String) tokenStack.peek() )) {
-              reverse_polish.add((String)tokenStack.pop());
+              reverse_polish.add((String)tokenStack.peak());
+              tokenStack.pop();
               continue;
             }
             
@@ -85,37 +91,55 @@ public class Calculator{
         }
 
       while (tokenStack.peek() != null) {
-        reverse_polish.add((String)tokenStack.pop());
+        reverse_polish.add((String)tokenStack.peak());
+        tokenStack.pop();
       }
 
     }
   
     private final HashMap<String, Integer> OPERATORS = new HashMap<>();
     {
-        OPERATORS.put("*", 3);
-        OPERATORS.put("/", 3);
-        OPERATORS.put("%", 3);
-        OPERATORS.put("+", 4);
-        OPERATORS.put("-", 4);
+      // Map<"token", precedence>
+      OPERATORS.put("*", 3);
+      OPERATORS.put("/", 3);
+      OPERATORS.put("%", 3);
+      OPERATORS.put("+", 4);
+      OPERATORS.put("-", 4);
+      OPERATORS.put("^", 2);
+      OPERATORS.put("sqrt", 2);
     }
 
+    private final HashMap<String, Integer> NUMOPERANDS = new HashMap<>();
+    {
+      // Map<"token", precedence>
+      NUMOPERANDS.put("*", 2);
+      NUMOPERANDS.put("/", 2);
+      NUMOPERANDS.put("%", 2);
+      NUMOPERANDS.put("+", 2);
+      NUMOPERANDS.put("-", 2);
+      NUMOPERANDS.put("^", 2);
+      NUMOPERANDS.put("SQRT", 1);
+    }
+    
+    // Helper definition for supported operators
     private final HashMap<String, Integer> SEPARATORS = new HashMap<>();
     {
-        SEPARATORS.put(" ", 0);
-        SEPARATORS.put("(", 0);
-        SEPARATORS.put(")", 0);
+      SEPARATORS.put(" ", 0);
+      SEPARATORS.put("(", 0);
+      SEPARATORS.put(")", 0);
     }
 
     private void termTokenizer() {
+      // contains final list of tokens
       this.tokens = new ArrayList<>();
 
-      int start = 0;  
-      StringBuilder multiCharTerm = new StringBuilder();    
+      int start = 0;  // term split starting index
+      StringBuilder multiCharTerm = new StringBuilder();  //termholder   
       for (int i = 0; i < this.expression.length(); i++) {
           Character c = this.expression.charAt(i);
-          if ( isOperator(c.toString() ) || isSeperator(c.toString())  ) {
-
-            if (multiCharTerm.length() > 0) {
+          if (isOperator(c.toString() ) || isSeperator(c.toString())  ) {
+                // 1st check for working term and add if it exists
+            if (multiCharTerm.length() > 0) {                 // Add operator or parenthesis term to list
                   tokens.add(this.expression.substring(start, i));
               }
 
@@ -125,20 +149,22 @@ public class Calculator{
 
               start = i + 1;
               multiCharTerm = new StringBuilder();
-          } else {
+          } else {                 // multi character terms: numbers, functions, perhaps non-supported elements
+                // Add next character to working term
 
             multiCharTerm.append(c);
           }
 
       }
-      if (multiCharTerm.length() > 0) {
+      if (multiCharTerm.length() > 0) { //last term
           tokens.add(this.expression.substring(start));
       }
   }
 
   private void rpnToResult()
     {
-        Stack calculation = new Stack();
+        LinkedList<Double> calculationStack = new LinkedList<>();
+        Stack calculation = new Stack(calculationStack);
 
         double one = 0;
         double two = 0;
@@ -150,10 +176,18 @@ public class Calculator{
           }
 
           else{
-            one = (Double) calculation.peek();
-            calculation.pop();
-            two = (Double) calculation.pop();
-            two = calculation.pop();
+            if (NUMOPERANDS.get(reverse_polish.get(i)) == 1) {
+              one = (Double)(calculation.peek());
+              calculation.pop();
+            }
+
+            else{
+              one = (Double) calculation.peek();
+              calculation.pop();
+              two = (Double) calculation.pop();
+              two = calculation.pop();
+            }
+            
 
             switch(reverse_polish.get(i)) { 
               case "+":
@@ -180,6 +214,9 @@ public class Calculator{
             }
 
           }
+
+          this.finalAnswer = (Double)calculation.peek();
+          calculation.pop();
         }
 
     //     // for loop to process RPN
@@ -200,6 +237,14 @@ public class Calculator{
     //     // Pop final result and set as final result for expression
     // }
   
-}
+  }
+
+  public String toString() {
+    return ("Here is everything for the operation! \n" +
+            "Original expression: " + this.expression + "\n" +
+            "Tokenized expression: " + this.tokens.toString() + "\n" +
+            "Reverse Polish Notation: " + this.reverse_polish.toString() + "\n" +
+            "Final result: " + String.format("%.4f", this.result)) + "\n" + "\n";
+  }
 
 }
