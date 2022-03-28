@@ -201,11 +201,18 @@ public class Calculator{
                         calculation.push((two % one));
                         break;
                     case "^":
-                      for(Double j = two; j < 0; j-- ){
-                        one *= one;
+                      
+                      double power = one;
+                      double base = two;
+
+                      double answer = 1;
+
+                      while(power != 0){
+                        answer *= base;
+                        power --;
                       }
-                      calculation.push(one);
-                        break;
+                      calculation.push(answer);
+                      break;
                     case "SQRT":
                         calculation.push((Math.sqrt(one)));
                         break;
