@@ -1,8 +1,8 @@
 import java.util.ArrayList;
 import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Scanner;
 import java.util.Stack;
+import java.util.HashMap;
+
 
 public class Calculator{
 
@@ -89,5 +89,93 @@ public class Calculator{
 
     }
   
+    private final HashMap<String, Integer> OPERATORS = new HashMap<>();
+    {
+        OPERATORS.put("*", 3);
+        OPERATORS.put("/", 3);
+        OPERATORS.put("%", 3);
+        OPERATORS.put("+", 4);
+        OPERATORS.put("-", 4);
+    }
+
+    private final HashMap<String, Integer> SEPARATORS = new HashMap<>();
+    {
+        SEPARATORS.put(" ", 0);
+        SEPARATORS.put("(", 0);
+        SEPARATORS.put(")", 0);
+    }
+
+    private void termTokenizer() {
+      this.tokens = new ArrayList<>();
+
+      int start = 0;  
+      StringBuilder multiCharTerm = new StringBuilder();    
+      for (int i = 0; i < this.expression.length(); i++) {
+          Character c = this.expression.charAt(i);
+          if ( isOperator(c.toString() ) || isSeperator(c.toString())  ) {
+
+            if (multiCharTerm.length() > 0) {
+                  tokens.add(this.expression.substring(start, i));
+              }
+
+              if (c != ' ') {
+                  tokens.add(c.toString());
+              }
+
+              start = i + 1;
+              multiCharTerm = new StringBuilder();
+          } else {
+
+            multiCharTerm.append(c);
+          }
+
+      }
+      if (multiCharTerm.length() > 0) {
+          tokens.add(this.expression.substring(start));
+      }
+  }
+
+  private void rpnToResult()
+    {
+        Stack calculation = new Stack();
+
+        double one = 0;
+        double two = 0;
+
+        for(int i = 0; i < reverse_polish.size(); i++){
+
+          if(OPERATORS.get(reverse_polish.get(i)) == 1){
+            calculation.push(OPERATORS.get(reverse_polish.get(i)))
+          }
+
+          else{
+            one = (Double) calculation.peek();
+            calculation.pop();
+            two = (Double) calculation.pop();
+
+            switch(reverse_polish.get(i)) { 
+
+            }
+
+          }
+        }
+
+    //     // for loop to process RPN
+    //     {
+    //         // If the token is a number
+    //         {
+    //             // Push number to stack
+    //         }
+    //         // else
+    //         {
+    //             // Pop the two top entries
+
+    //             // Based off of Token operator calculate result
+
+    //             // Push result back onto the stack
+    //         }
+    //     }
+    //     // Pop final result and set as final result for expression
+    // }
   
 }
