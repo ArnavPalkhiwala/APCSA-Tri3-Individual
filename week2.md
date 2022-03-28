@@ -1,3 +1,5 @@
+# Week 2
+
 # Calculator Highlights
 
 * Something that was key for me was understanding Reverse Polish Notation and how to integrate it with my ideas in order to create a well-functioning project
