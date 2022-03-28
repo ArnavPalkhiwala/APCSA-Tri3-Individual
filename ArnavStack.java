@@ -1,8 +1,9 @@
 import java.util.LinkedList;
 
+
 public class ArnavStack {
-  
-    LinkedList<Object> o1;
+
+  LinkedList<Object> o1;
 
     public ArnavStack(LinkedList o2) {
         o1 = o2;

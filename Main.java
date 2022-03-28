@@ -1,6 +1,5 @@
 
 import java.util.Scanner; 
-import java.util.ArrayList;
 
 public class Main {   
   
@@ -71,8 +70,8 @@ public class Main {
     // c1.run();
       
     Scanner scan = new Scanner(System.in);
-    System.out.println("Enter your Calculation!");
-    String expression = scan.next();  
+    System.out.println("Enter your Calculation! Or QUIT ");
+    String expression = scan.nextLine();  
     Calculator calc = new Calculator(expression);
     System.out.println(calc);
       

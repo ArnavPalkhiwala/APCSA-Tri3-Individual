@@ -1,8 +1,6 @@
 import java.util.ArrayList;
 import java.util.LinkedList;
-import java.util.Stack;
 import java.util.HashMap;
-@SuppressWarnings("unchecked")
 
 
 public class Calculator{
@@ -100,8 +98,12 @@ public class Calculator{
           case "/":
                 
           case "%":
+
+          case "^":
+                
+          case "SQRT":
                    
-          while (tokenStack.peek() != null && tokenStack.size() > 0 && isOperator((String) tokenStack.peek())){
+          while (tokenStack.size() > 0 && tokenStack.peek() != null && isOperator((String) tokenStack.peek())){
             
             if (isPrecedent(token, (String) tokenStack.peek() )) {
               reverse_polish.add((String)tokenStack.peek());
@@ -121,11 +123,10 @@ public class Calculator{
             }
         }
 
-      while (tokenStack.peek() != null) {
-      this.reverse_polish.add((String)tokenStack.peek());
-      tokenStack.pop();
+      while (tokenStack.size() > 0 && tokenStack.peek() != null) {
+        this.reverse_polish.add((String)tokenStack.peek());
+        tokenStack.pop();
       }
-
     }
 
     private void termTokenizer() {
@@ -162,57 +163,57 @@ public class Calculator{
 
   private void rpnToResult()
     {
-        LinkedList<Double> calculationStack = new LinkedList<>();
-        ArnavStack calculation = new ArnavStack(calculationStack);
+    LinkedList<Double> ccccc= new LinkedList<>();
+        ArnavStack calculation = new ArnavStack(ccccc);
+        Double one = 0.0;
+        Double two = 0.0;
 
-        double one = 0;
-        double two = 0;
-
-        for(int i = 0; i < reverse_polish.size(); i++){
-
-          if(OPERATORS.get(reverse_polish.get(i)) == 1){
-            calculation.push(OPERATORS.get(reverse_polish.get(i)));
-          }
-
-          else{
-            if (NUMOPERANDS.get(reverse_polish.get(i)) == 1) {
-              one = (Double)(calculation.peek());
-              calculation.pop();
-            }
-
-            else{
-              one = (Double) calculation.peek();
-              calculation.pop();
-              two = (Double) calculation.peek();
-              calculation.pop();
-            }
-            
-
-            switch(reverse_polish.get(i)) { 
-              case "+":
-                calculation.push((one + two));
-                break;
-              case "-":
-                calculation.push((one - two));
-                break;
-              case "*":
-                calculation.push((one * two));
-                break;
-              case "/":
-                calculation.push((two / one));
-                break;
-              case "%":
-                calculation.push((two % one));
-                break;
-              case "^":
-                for(int j = 0; j < (int) two; j++ ){
-                  one *= one;
+        for (int i=0; i<reverse_polish.size(); i++)  {
+          //double check its location is it 1 number
+            if (!OPERATORS.containsKey(reverse_polish.get(i))) {
+                calculation.push(Double.parseDouble(reverse_polish.get(i)));
+            } 
+            else {
+                if (NUMOPERANDS.get(reverse_polish.get(i)) == 1) {
+                    one = (Double)(calculation.peek());
+                    calculation.pop();
+                } else {
+                    // there are multiple operands here to deal with
+                    one = (Double)(calculation.peek());
+                    calculation.pop();
+                    two = (Double)(calculation.peek());
+                    calculation.pop();
                 }
-                calculation.push(one);
-                break;
-            }
+                switch(reverse_polish.get(i)) { 
+                    case "+":
+                        calculation.push((one + two));
+                        break;
+                    case "-":
+                        calculation.push((two - one));
+                        break;
+                    case "*":
+                        calculation.push((one * two));
+                        break;
+                    case "/":
+                        calculation.push((two / one));
+                        break;
+                    case "%":
+                        calculation.push((two % one));
+                        break;
+                    case "^":
+                      for(Double j = two; j < 0; j-- ){
+                        one *= one;
+                      }
+                      calculation.push(one);
+                        break;
+                    case "SQRT":
+                        calculation.push((Math.sqrt(one)));
+                        break;
+                    }//switch
 
-          }
+                }   //is operand
+        
+            }
 
           this.finalAnswer = (Double)calculation.peek();
           calculation.pop();
@@ -235,8 +236,6 @@ public class Calculator{
     //     }
     //     // Pop final result and set as final result for expression
     // }
-  
-  }
 
   public String toString() {
     return ("Here is everything for the operation! \n" +
