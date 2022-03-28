@@ -1,9 +1,9 @@
 theme: minima
 
 header_pages:
-  - index.md
   - techtalk.md
   - week0.md
   - week1.md
+  - week2.md
 
 
