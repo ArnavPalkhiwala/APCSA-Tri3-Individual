@@ -145,7 +145,7 @@ public class Calculator{
         for(int i = 0; i < reverse_polish.size(); i++){
 
           if(OPERATORS.get(reverse_polish.get(i)) == 1){
-            calculation.push(OPERATORS.get(reverse_polish.get(i)))
+            calculation.push(OPERATORS.get(reverse_polish.get(i)));
           }
 
           else{
