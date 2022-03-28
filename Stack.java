@@ -19,7 +19,7 @@ public class Stack {
         return ll1.get(0);
     }
 
-    public Double size(){
+    public Integer size(){
         return ll1.size();
     }
 
