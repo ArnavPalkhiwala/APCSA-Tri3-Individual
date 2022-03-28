@@ -154,7 +154,27 @@ public class Calculator{
             two = (Double) calculation.pop();
 
             switch(reverse_polish.get(i)) { 
-
+              case "+":
+                calculation.push((one + two));
+                break;
+              case "-":
+                calculation.push((one - two));
+                break;
+              case "*":
+                calculation.push((one * two));
+                break;
+              case "/":
+                calculation.push((two / one));
+                break;
+              case "%":
+                calculation.push((two % one));
+                break;
+              case "^":
+                for(int j = 0; j < (int) two; j++ ){
+                  one *= one;
+                }
+                calculation.push(one);
+                break;
             }
 
           }
