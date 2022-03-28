@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Stack;
 import java.util.HashMap;
+@SuppressWarnings("unchecked")
 
 
 public class Calculator{
@@ -16,9 +17,7 @@ public class Calculator{
 
   
   public Calculator(String expression) {
-  
-    System.out.println("Here is the calculator");
-    
+      
     this.expression = expression;
     
     this.termTokenizer();         // parse expression into terms
@@ -26,78 +25,9 @@ public class Calculator{
     this.tokensToReversePolishNotation();         // place terms into reverse polish notation
 
     this.rpnToResult();         // calculate reverse polish notation
-    }
-  
-    private boolean isOperator(String token) {
-         return OPERATORS.containsKey(token);
-    }
+  }
 
-    private boolean isSeperator(String token) {
-         return SEPARATORS.containsKey(token);
-    }
-
-    private Boolean isPrecedent(String token1, String token2) {
-        return (OPERATORS.get(token1) - OPERATORS.get(token2) >= 0) ;
-    }
-    private void tokensToReversePolishNotation () {
-
-      this.reverse_polish = new ArrayList<>();
-
-      LinkedList<String> tokenList = new LinkedList<>();
-      Stack tokenStack = new Stack(tokenList);
-      for (String token : tokens) {
-        switch (token) {
-
-          case "(":        
-            tokenStack.push(token);
-            break;
-            
-          case ")":
-            while (tokenStack.peek() != null && !tokenStack.peek().equals("(")){
-              reverse_polish.add((String)tokenStack.peak());
-              tokenStack.pop();
-            }
-              tokenStack.pop();
-              break;
-            
-          case "+":
-            
-          case "-":
-                
-          case "*":
-                
-          case "/":
-                
-          case "%":
-                   
-          while (tokenStack.peek() != null && tokenStack.size() > 0 && isOperator((String) tokenStack.peek())){
-            
-            if (isPrecedent(token, (String) tokenStack.peek() )) {
-              reverse_polish.add((String)tokenStack.peak());
-              tokenStack.pop();
-              continue;
-            }
-            
-            break;
-          }
-
-          tokenStack.push(token);
-          break;
-                
-          default:    
-            this.reverse_polish.add(token);
-            
-            }
-        }
-
-      while (tokenStack.peek() != null) {
-        reverse_polish.add((String)tokenStack.peak());
-        tokenStack.pop();
-      }
-
-    }
-  
-    private final HashMap<String, Integer> OPERATORS = new HashMap<>();
+  private final HashMap<String, Integer> OPERATORS = new HashMap<>();
     {
       // Map<"token", precedence>
       OPERATORS.put("*", 3);
@@ -127,6 +57,75 @@ public class Calculator{
       SEPARATORS.put(" ", 0);
       SEPARATORS.put("(", 0);
       SEPARATORS.put(")", 0);
+    }
+  
+    private boolean isOperator(String token) {
+         return OPERATORS.containsKey(token);
+    }
+
+    private boolean isSeperator(String token) {
+         return SEPARATORS.containsKey(token);
+    }
+
+    private Boolean isPrecedent(String token1, String token2) {
+        return (OPERATORS.get(token1) - OPERATORS.get(token2) >= 0) ;
+    }
+    private void tokensToReversePolishNotation () {
+
+      this.reverse_polish = new ArrayList<>();
+
+      LinkedList<String> tokenList = new LinkedList<>();
+      ArnavStack tokenStack = new ArnavStack(tokenList);
+      for (String token : tokens) {
+        switch (token) {
+
+          case "(":        
+            tokenStack.push(token);
+            break;
+            
+          case ")":
+            while (tokenStack.peek() != null && !tokenStack.peek().equals("(")){
+              reverse_polish.add((String)tokenStack.peek());
+              tokenStack.pop();
+            }
+              tokenStack.pop();
+              break;
+            
+          case "+":
+            
+          case "-":
+                
+          case "*":
+                
+          case "/":
+                
+          case "%":
+                   
+          while (tokenStack.peek() != null && tokenStack.size() > 0 && isOperator((String) tokenStack.peek())){
+            
+            if (isPrecedent(token, (String) tokenStack.peek() )) {
+              reverse_polish.add((String)tokenStack.peek());
+              tokenStack.pop();
+              continue;
+            }
+            
+            break;
+          }
+
+          tokenStack.push(token);
+          break;
+                
+          default:    
+            this.reverse_polish.add(token);
+            
+            }
+        }
+
+      while (tokenStack.peek() != null) {
+      this.reverse_polish.add((String)tokenStack.peek());
+      tokenStack.pop();
+      }
+
     }
 
     private void termTokenizer() {
@@ -164,7 +163,7 @@ public class Calculator{
   private void rpnToResult()
     {
         LinkedList<Double> calculationStack = new LinkedList<>();
-        Stack calculation = new Stack(calculationStack);
+        ArnavStack calculation = new ArnavStack(calculationStack);
 
         double one = 0;
         double two = 0;
@@ -184,8 +183,8 @@ public class Calculator{
             else{
               one = (Double) calculation.peek();
               calculation.pop();
-              two = (Double) calculation.pop();
-              two = calculation.pop();
+              two = (Double) calculation.peek();
+              calculation.pop();
             }
             
 
@@ -244,7 +243,7 @@ public class Calculator{
             "Original expression: " + this.expression + "\n" +
             "Tokenized expression: " + this.tokens.toString() + "\n" +
             "Reverse Polish Notation: " + this.reverse_polish.toString() + "\n" +
-            "Final result: " + String.format("%.4f", this.result)) + "\n" + "\n";
+            "Final result: " + String.format("%.4f", this.finalAnswer)) + "\n" + "\n";
   }
 
 }

@@ -70,7 +70,8 @@ public class Main {
     // Challenge1 c1 = new Challenge1();
     // c1.run();
       
-    Scanner scan = new Scanner(System.in); 
+    Scanner scan = new Scanner(System.in);
+    System.out.println("Enter your Calculation!");
     String expression = scan.next();  
     Calculator calc = new Calculator(expression);
     System.out.println(calc);
