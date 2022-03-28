@@ -49,8 +49,9 @@ public class Calculator{
             
           case ")":
             while (tokenStack.peek() != null && !tokenStack.peek().equals("(")){
-                reverse_polish.add( (String)tokenStack.pop() );
-              }
+              reverse_polish.add( (String)tokenStack.peak());
+              tokenStack.pop();
+            }
               tokenStack.pop();
               break;
             
@@ -152,6 +153,7 @@ public class Calculator{
             one = (Double) calculation.peek();
             calculation.pop();
             two = (Double) calculation.pop();
+            two = calculation.pop();
 
             switch(reverse_polish.get(i)) { 
               case "+":
