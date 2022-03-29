@@ -35,6 +35,8 @@ public class Calculator{
       OPERATORS.put("-", 4);
       OPERATORS.put("^", 2);
       OPERATORS.put("sqrt", 2);
+      OPERATORS.put("$", 2);
+
     }
 
     private final HashMap<String, Integer> NUMOPERANDS = new HashMap<>();
@@ -47,6 +49,8 @@ public class Calculator{
       NUMOPERANDS.put("-", 2);
       NUMOPERANDS.put("^", 2);
       NUMOPERANDS.put("sqrt", 1);
+      NUMOPERANDS.put("$", 1);
+
     }
     
     // Helper definition for supported operators
@@ -102,6 +106,8 @@ public class Calculator{
           case "^":
                 
           case "sqrt":
+
+          case "$":
                    
           while (tokenStack.size() > 0 && tokenStack.peek() != null && isOperator((String) tokenStack.peek())){
             
@@ -226,6 +232,23 @@ public class Calculator{
 
                         calculation.push(root);
                         break;
+
+                    case "$":
+                        double numb = one*one + two*two;
+                        
+                        double temp2 = 0;
+                        double root2 = numb/2;
+
+                        do{
+                          temp = root2;
+                          root = (temp2 + (numb/temp2))/2;
+                        }
+                        while((temp2 - root2) != 0);
+
+                        calculation.push(root2);
+                        break;
+
+
                     }//switch
 
                 }   //is operand
