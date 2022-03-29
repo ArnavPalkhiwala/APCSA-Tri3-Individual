@@ -70,10 +70,33 @@ public class Main {
     // c1.run();
       
     Scanner scan = new Scanner(System.in);
-    System.out.println("Enter your Calculation! Or QUIT ");
-    String expression = scan.nextLine();  
-    Calculator calc = new Calculator(expression);
-    System.out.println(calc);
+    int entries = 5;
+    while(entries > 0){
+        
+        try{
+            System.out.println("Enter your Calculation! You get 5 entries");
+
+            if(scan.nextLine().equals("quit")){
+                break;
+            }
+
+            String expression = scan.nextLine();  
+            
+            Calculator calc = new Calculator(expression);
+            System.out.println(calc);
+            System.out.println("     ");
+
+            entries --;
+        }
+       
+        catch(Exception e){
+            entries --;
+
+            System.out.println("You gave an invalid input");
+            
+        }
+    }
+    
       
     }
 
