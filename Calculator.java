@@ -48,17 +48,9 @@ public class Calculator{
       NUMOPERANDS.put("+", 2);
       NUMOPERANDS.put("-", 2);
       NUMOPERANDS.put("^", 2);
-<<<<<<< HEAD
-<<<<<<< HEAD
-      NUMOPERANDS.put("sqrt", 1);
-      NUMOPERANDS.put("$", 1);
 
-=======
-      NUMOPERANDS.put("SQRT", 1);
->>>>>>> parent of a6d21ee (fully finished code and all cleaned up)
-=======
-      NUMOPERANDS.put("SQRT", 1);
->>>>>>> parent of a6d21ee (fully finished code and all cleaned up)
+      NUMOPERANDS.put("sqrt", 1);
+
     }
     
     // Helper definition for supported operators
@@ -113,17 +105,7 @@ public class Calculator{
 
           case "^":
                 
-<<<<<<< HEAD
-<<<<<<< HEAD
           case "sqrt":
-
-          case "$":
-=======
-          case "SQRT":
->>>>>>> parent of a6d21ee (fully finished code and all cleaned up)
-=======
-          case "SQRT":
->>>>>>> parent of a6d21ee (fully finished code and all cleaned up)
                    
           while (tokenStack.size() > 0 && tokenStack.peek() != null && isOperator((String) tokenStack.peek())){
             
@@ -235,28 +217,7 @@ public class Calculator{
                       }
                       calculation.push(answer);
                       break;
-                    case "SQRT":
-                        calculation.push((Math.sqrt(one)));
-<<<<<<< HEAD
-                        break;
-
-                    case "$":
-                        double numb = one*one + two*two;
-                        
-                        double temp2 = 0;
-                        double root2 = numb/2;
-
-                        do{
-                          temp = root2;
-                          root = (temp2 + (numb/temp2))/2;
-                        }
-                        while((temp2 - root2) != 0);
-
-                        calculation.push(root2);
-=======
->>>>>>> parent of a6d21ee (fully finished code and all cleaned up)
-                        break;
-
+                    
 
                     }//switch
 
