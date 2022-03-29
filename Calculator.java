@@ -48,9 +48,13 @@ public class Calculator{
       NUMOPERANDS.put("+", 2);
       NUMOPERANDS.put("-", 2);
       NUMOPERANDS.put("^", 2);
+<<<<<<< HEAD
       NUMOPERANDS.put("sqrt", 1);
       NUMOPERANDS.put("$", 1);
 
+=======
+      NUMOPERANDS.put("SQRT", 1);
+>>>>>>> parent of a6d21ee (fully finished code and all cleaned up)
     }
     
     // Helper definition for supported operators
@@ -105,9 +109,13 @@ public class Calculator{
 
           case "^":
                 
+<<<<<<< HEAD
           case "sqrt":
 
           case "$":
+=======
+          case "SQRT":
+>>>>>>> parent of a6d21ee (fully finished code and all cleaned up)
                    
           while (tokenStack.size() > 0 && tokenStack.peek() != null && isOperator((String) tokenStack.peek())){
             
@@ -219,18 +227,8 @@ public class Calculator{
                       }
                       calculation.push(answer);
                       break;
-                    case "sqrt":
-                        double num = one;
-                        double temp;
-                        double root = num/2;
-
-                        do{
-                          temp = root;
-                          root = (temp + (num/temp))/2;
-                        }
-                        while((temp - root) != 0);
-
-                        calculation.push(root);
+                    case "SQRT":
+                        calculation.push((Math.sqrt(one)));
                         break;
 
                     case "$":
@@ -282,7 +280,7 @@ public class Calculator{
             "Original expression: " + this.expression + "\n" +
             "Tokenized expression: " + this.tokens.toString() + "\n" +
             "Reverse Polish Notation: " + this.reverse_polish.toString() + "\n" +
-            "This is the final answer for the expression: " + String.format("%.4f", this.finalAnswer)) + "\n" + "\n";
+            "Final result: " + String.format("%.4f", this.finalAnswer)) + "\n" + "\n";
   }
 
 }
