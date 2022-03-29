@@ -76,7 +76,7 @@ public class Main {
             String expression = scan.nextLine();  
             // a = 2
             //pi = 3.1415
-            Calculator calc = new Calculator(expression.replaceAll("a", "2"));
+            Calculator calc = new Calculator(expression.replaceAll("a", "3").replaceAll("b", "4"));
             System.out.println(calc); 
         }
 
