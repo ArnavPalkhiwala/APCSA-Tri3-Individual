@@ -36,6 +36,8 @@ public class Calculator{
       OPERATORS.put("^", 2);
       OPERATORS.put("sqrt", 2);
       OPERATORS.put("$", 2);
+      OPERATORS.put("pyth", 2);
+
 
     }
 
@@ -48,8 +50,9 @@ public class Calculator{
       NUMOPERANDS.put("+", 2);
       NUMOPERANDS.put("-", 2);
       NUMOPERANDS.put("^", 2);
-
       NUMOPERANDS.put("sqrt", 1);
+      NUMOPERANDS.put("pyth", 1);
+
 
     }
     
@@ -106,6 +109,8 @@ public class Calculator{
           case "^":
                 
           case "sqrt":
+
+          case "pyth":
                    
           while (tokenStack.size() > 0 && tokenStack.peek() != null && isOperator((String) tokenStack.peek())){
             
@@ -204,19 +209,6 @@ public class Calculator{
                     case "%":
                         calculation.push((two % one));
                         break;
-                    case "^":
-                      
-                      double power = one;
-                      double base = two;
-
-                      double answer = 1;
-
-                      while(power != 0){
-                        answer *= base;
-                        power --;
-                      }
-                      calculation.push(answer);
-                      break;
                     
 
                     }//switch
