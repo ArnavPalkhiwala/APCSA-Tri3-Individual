@@ -68,12 +68,23 @@ public class Main {
 
     // Challenge1 c1 = new Challenge1();
     // c1.run();
-      
-    Scanner scan = new Scanner(System.in);
-    System.out.println("Enter your Calculation! Or QUIT ");
-    String expression = scan.nextLine();  
-    Calculator calc = new Calculator(expression);
-    System.out.println(calc);
+    
+    while(true){
+        try{ 
+            Scanner scan = new Scanner(System.in);
+            System.out.println("Enter your Calculation! Or QUIT ");
+            String expression = scan.nextLine();  
+            // a = 2
+            //pi = 3.1415
+            Calculator calc = new Calculator(expression.replaceAll("a", "2").replaceAll("pi", "3.1415"));
+            System.out.println(calc); 
+        }
+
+        catch(Exception E){
+            System.out.println("This is invalid");
+        }
+    }
+   
       
     }
 

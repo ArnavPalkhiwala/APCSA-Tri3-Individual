@@ -51,7 +51,7 @@ public class Calculator{
       NUMOPERANDS.put("-", 2);
       NUMOPERANDS.put("^", 2);
       NUMOPERANDS.put("sqrt", 1);
-      NUMOPERANDS.put("pyth", 1);
+      NUMOPERANDS.put("pyth", 2);
 
 
     }
@@ -209,7 +209,50 @@ public class Calculator{
                     case "%":
                         calculation.push((two % one));
                         break;
+                    case "^":
+                      
+                      double power = one;
+                      double base = two;
+
+                      double answer = 1;
+
+                      while(power != 0){
+                        answer *= base;
+                        power --;
+                      }
+                      calculation.push(answer);
+                      break;
+
+                    case "sqrt":
+                      double num = one;
+                      double temp;
+                      double root = num/2;
+
+                      do{
+                        temp = root;
+                        root = (temp + (num/temp))/2;
+                      }
+                      while((temp - root) != 0);
+
+                      calculation.push(root);
+                      break;
+
+                    case "pyth":
                     
+                      double number = (one*one) + (two*two);
+                      double temporary;
+                      double sr = number/2;
+
+                      do{
+                        temporary = sr;
+                        sr = (temporary + (number/temporary))/2;
+                      }
+                      while((temporary - sr) != 0);
+
+                      calculation.push(sr);
+
+                      break;
+
 
                     }//switch
 
