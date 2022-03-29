@@ -49,9 +49,13 @@ public class Calculator{
       NUMOPERANDS.put("-", 2);
       NUMOPERANDS.put("^", 2);
 <<<<<<< HEAD
+<<<<<<< HEAD
       NUMOPERANDS.put("sqrt", 1);
       NUMOPERANDS.put("$", 1);
 
+=======
+      NUMOPERANDS.put("SQRT", 1);
+>>>>>>> parent of a6d21ee (fully finished code and all cleaned up)
 =======
       NUMOPERANDS.put("SQRT", 1);
 >>>>>>> parent of a6d21ee (fully finished code and all cleaned up)
@@ -110,9 +114,13 @@ public class Calculator{
           case "^":
                 
 <<<<<<< HEAD
+<<<<<<< HEAD
           case "sqrt":
 
           case "$":
+=======
+          case "SQRT":
+>>>>>>> parent of a6d21ee (fully finished code and all cleaned up)
 =======
           case "SQRT":
 >>>>>>> parent of a6d21ee (fully finished code and all cleaned up)
@@ -229,6 +237,7 @@ public class Calculator{
                       break;
                     case "SQRT":
                         calculation.push((Math.sqrt(one)));
+<<<<<<< HEAD
                         break;
 
                     case "$":
@@ -244,6 +253,8 @@ public class Calculator{
                         while((temp2 - root2) != 0);
 
                         calculation.push(root2);
+=======
+>>>>>>> parent of a6d21ee (fully finished code and all cleaned up)
                         break;
 
 
