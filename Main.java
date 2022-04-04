@@ -91,7 +91,8 @@ public class Main {
     
     String sort = scan.nextLine();
 
-    int sum=0, time=0, TIMES=12, SIZE=5000;
+    int sum=0, time=0, TIMES=12, SIZE=5000, totalSwaps = 0;
+    int comparison = 0;
 
 
     Object o;
@@ -107,10 +108,15 @@ public class Main {
             System.out.println("Average random: " + sum / ((i+1)*SIZE));
             System.out.println("Nanoseconds: " + s.getTimeElapsed());
             time += s.getTimeElapsed();
+
+            comparison = s.getComparisons();
+            totalSwaps = s.getSorts();
         }
         System.out.println("Average random: " + sum / (TIMES*SIZE));
         System.out.println("Total Nanoseconds: " + time );
         System.out.println("Total Seconds: " + time /1000000000.0);
+        System.out.println("Comparisons: " + comparison);
+        System.out.println("Swaps: " + totalSwaps);
 
 
 

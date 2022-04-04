@@ -6,7 +6,7 @@ public class SelectionSort {
     
     private final ArrayList<Integer> data;
     private final Duration timeElapsed;
-    int sorts = 5000;
+    int sorts = 0;
     int comparisons = 0;
 
     public SelectionSort(int size){
@@ -54,6 +54,7 @@ public class SelectionSort {
                 temp = data.get(i);
                 data.set(i, data.get(minIndex));
                 data.set(minIndex, temp);
+                sorts += 2;
             }
         }
 
@@ -66,5 +67,13 @@ public class SelectionSort {
 
     public int getTimeElapsed() {
         return timeElapsed.getNano();
+    }
+
+    public int getComparisons(){
+        return comparisons;
+    }
+
+    public int getSorts(){
+        return sorts;
     }
 }
