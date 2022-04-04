@@ -22,10 +22,15 @@ public class SelectionSort {
         this.timeElapsed = Duration.between(start, end);
     }
 
-    // public SelectionSort(ArrayList<Integer> sample) {
-    //     data = sample;
+    public SelectionSort(ArrayList<Integer> sample) {
+        data = sample;
+        Instant start = Instant.now();
+        intRun();
+
+        Instant end = Instant.now();   
+        this.timeElapsed = Duration.between(start, end);
         
-    // }
+    }
 
     public void intRun(){
         
