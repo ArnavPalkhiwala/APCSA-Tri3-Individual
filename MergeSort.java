@@ -7,7 +7,7 @@ public class MergeSort {
     private final ArrayList<Integer> data;
     private final Duration timeElapsed;
     static int sorts = 0;
-    int comparisons = 0;
+    static int comparisons = 0;
     int lowerIndex = 0;
     int higherIndex;
 
@@ -72,7 +72,8 @@ public class MergeSort {
         int i = 0, j = 0, track = low;
 
         while(i < leftSize && j < leftSize){
-            sorts ++;
+            comparisons ++;
+            sorts++;
             if(leftArray[i] < rightArray[j]){
                 list.set(track, leftArray[i]);
                 i++;
@@ -87,12 +88,14 @@ public class MergeSort {
         }
 
         while(i < leftSize){
+            sorts ++;
             list.set(track, leftArray[i]);
             i++;
             track++;
         }
 
         while(j < rightSize){
+            sorts ++;
             list.set(track, rightArray[j]);
             j++;
             track++;
