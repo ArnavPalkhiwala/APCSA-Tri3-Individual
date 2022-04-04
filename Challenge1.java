@@ -127,7 +127,6 @@ public class Challenge1{
     }
 
     else{
-      System.exit(0);
     }
   }
 }
