@@ -54,7 +54,7 @@ public class SelectionSort {
                 temp = data.get(i);
                 data.set(i, data.get(minIndex));
                 data.set(minIndex, temp);
-                sorts += 2;
+                sorts += 1;
             }
         }
 

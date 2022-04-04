@@ -98,25 +98,45 @@ public class Main {
     Object o;
 
     switch(sort){
-        case "Selection":
-        for(int i=0; i< TIMES; i++) {
-            SelectionSort s = new SelectionSort(SIZE);
-            for(int j = 0; j<s.getData().size(); j++) {
-                // System.out.println(s.getData()); //line to see the data
-                sum += s.getData().get(j);
-            }
-            System.out.println("Average random: " + sum / ((i+1)*SIZE));
-            System.out.println("Nanoseconds: " + s.getTimeElapsed());
-            time += s.getTimeElapsed();
+        case "1":
+            for(int i=0; i< TIMES; i++) {
+                SelectionSort s = new SelectionSort(SIZE);
+                for(int j = 0; j<s.getData().size(); j++) {
+                    // System.out.println(s.getData()); //line to see the data
+                    sum += s.getData().get(j);
+                }
+                System.out.println("Average random: " + sum / ((i+1)*SIZE));
+                System.out.println("Nanoseconds: " + s.getTimeElapsed());
+                time += s.getTimeElapsed();
 
-            comparison = s.getComparisons();
-            totalSwaps = s.getSorts();
-        }
-        System.out.println("Average random: " + sum / (TIMES*SIZE));
-        System.out.println("Total Nanoseconds: " + time );
-        System.out.println("Total Seconds: " + time /1000000000.0);
-        System.out.println("Comparisons: " + comparison);
-        System.out.println("Swaps: " + totalSwaps);
+                comparison = s.getComparisons();
+                totalSwaps = s.getSorts();
+            }
+            System.out.println("Average random: " + sum / (TIMES*SIZE));
+            System.out.println("Total Nanoseconds: " + time );
+            System.out.println("Total Seconds: " + time /1000000000.0);
+            System.out.println("Comparisons: " + comparison);
+            System.out.println("Swaps: " + totalSwaps);
+
+            case "2":
+                for(int i=0; i< TIMES; i++) {
+                    MergeSort s = new MergeSort(SIZE);
+                    for(int j = 0; j<s.getData().size(); j++) {
+                        // System.out.println(s.getData()); //line to see the data
+                        sum += s.getData().get(j);
+                    }
+                    System.out.println("Average random: " + sum / ((i+1)*SIZE));
+                    System.out.println("Nanoseconds: " + s.getTimeElapsed());
+                    time += s.getTimeElapsed();
+
+                    comparison = s.getComparisons();
+                    totalSwaps = s.getSorts();
+                }
+                System.out.println("Average random: " + sum / (TIMES*SIZE));
+                System.out.println("Total Nanoseconds: " + time );
+                System.out.println("Total Seconds: " + time /1000000000.0);
+                System.out.println("Comparisons: " + comparison);
+                System.out.println("Swaps: " + totalSwaps);
 
 
 
