@@ -69,22 +69,56 @@ public class Main {
     // Challenge1 c1 = new Challenge1();
     // c1.run();
     
-    while(true){
-        try{ 
-            Scanner scan = new Scanner(System.in);
-            System.out.println("Enter your Calculation! Or QUIT ");
-            String expression = scan.nextLine();  
-            // a = 2
-            //pi = 3.1415
-            Calculator calc = new Calculator(expression.replaceAll("a", "3").replaceAll("b", "4"));
-            System.out.println(calc); 
-        }
+    // while(true){
+    //     try{ 
+    //         Scanner scan = new Scanner(System.in);
+    //         System.out.println("Enter your Calculation! Or QUIT ");
+    //         String expression = scan.nextLine();  
+    //         // a = 2
+    //         //pi = 3.1415
+    //         Calculator calc = new Calculator(expression.replaceAll("a", "3").replaceAll("b", "4"));
+    //         System.out.println(calc); 
+    //     }
 
-        catch(Exception E){
-            System.out.println("This is invalid");
+    //     catch(Exception E){
+    //         System.out.println("This is invalid");
+    //     }
+    // }
+
+    Scanner scan = new Scanner(System.in);
+
+    System.out.println("Enter the type of sort you would like to complete");
+    
+    String sort = scan.nextLine();
+
+    int sum=0, time=0, TIMES=12, SIZE=5000;
+
+
+    Object o;
+
+    switch(sort){
+        case "Selection":
+        for(int i=0; i< TIMES; i++) {
+            SelectionSort s = new SelectionSort(SIZE);
+            for(int j = 0; j<s.getData().size(); j++) {
+                // System.out.println(s.getData()); //line to see the data
+                sum += s.getData().get(j);
+            }
+            System.out.println("Average random: " + sum / ((i+1)*SIZE));
+            System.out.println("Nanoseconds: " + s.getTimeElapsed());
+            time += s.getTimeElapsed();
         }
+        System.out.println("Average random: " + sum / (TIMES*SIZE));
+        System.out.println("Total Nanoseconds: " + time );
+        System.out.println("Total Seconds: " + time /1000000000.0);
+
+
+
     }
+
    
+
+       
       
     }
 
