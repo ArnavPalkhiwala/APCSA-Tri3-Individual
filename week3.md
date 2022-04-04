@@ -46,8 +46,9 @@ Selection:
 *  Time is also made with the duration feature
 *  Big O: Selection Sort is not that fast because it has nested for loops and is useful for small data sets -> in O(n^2)
 
-# Analysis:
-*  From my research and Big O analysis, it is clear that although it is the most difficult, merge sort is the best algorithm 
+# Analysis An Option on Repl Menu:
+*  From my research and Big O analysis, it is clear that although it is the most difficult, merge sort is the best algorithm
+*  This came from the average the results for each each Sort, run each at least 12 times and 5000 elements -> throw out High and Low when doing analysis.
 *  It has the most efficient amount of comparisons and swaps
 *  Does not uses nested for loops/while loops
 *  It has the lowest time by far 
