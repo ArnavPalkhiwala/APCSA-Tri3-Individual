@@ -1,6 +1,6 @@
 # Week 3
 
-[Review Ticket](https://github.com/ArnavPalkhiwala/APCSA-Tri3-Individual/issues/3)
+[Review Ticket](https://github.com/ArnavPalkhiwala/APCSA-Tri3-Individual/issues/4)
 
 [Link to running Repl](https://replit.com/@ArnavPalkhiwala/APCSA-Tri3-Individual-6#README.md)
 
