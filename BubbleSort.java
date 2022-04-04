@@ -55,7 +55,7 @@ public class BubbleSort {
         return data;
     }
 
-    public int getTimeElapsed() {
+    public long getTimeElapsed() {
         return timeElapsed.getNano();
     }
 

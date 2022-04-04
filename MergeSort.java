@@ -107,7 +107,7 @@ public class MergeSort {
         return data;
     }
 
-    public int getTimeElapsed() {
+    public long getTimeElapsed() {
         return timeElapsed.getNano();
     }
 

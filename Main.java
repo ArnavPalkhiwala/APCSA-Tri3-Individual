@@ -95,7 +95,8 @@ public class Main {
                         
                         String sort = scan.nextLine();
                 
-                        int sum=0, time=0, TIMES=12, SIZE=5000, totalSwaps = 0;
+                        int sum=0, TIMES=12, SIZE=5000, totalSwaps = 0;
+                        long time = 0;
                         int comparison = 0;
                 
                         switch(sort){
