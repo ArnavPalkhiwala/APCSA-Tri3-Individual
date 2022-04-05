@@ -7,6 +7,8 @@ public class Main {
     static public void main(String[] args)  { 
         
         boolean everything = true;
+        //menu options
+        String[] choices = new String[]{"1 - Challenge 1", "2 - Calculator", "3 - Sorting", "0 - Quit"};
 
         Scanner scan = new Scanner(System.in);
 
@@ -15,11 +17,17 @@ public class Main {
             System.out.println("-----------------------\n");
             System.out.println("Choose from these choices");
             System.out.println("-------------------------\n");
-    
+    /*
             System.out.println("1 - Challenge 1");
             System.out.println("2 - Calculator");
             System.out.println("3 - Sorting");   
             System.out.println("0 - Quit");
+            */
+
+            //not hard coded menu
+            for(int i=0; i<choices.length; i++){
+                System.out.println(choices[i]);
+            }
             System.out.println("");
 
             String choice1 = scan.nextLine();
