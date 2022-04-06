@@ -68,7 +68,11 @@ public class Main {
 
                     case "2":
                         try {
+                            Calculator allMath2 = new Calculator("200 % (300 + 5 + 300) / 200 + 1 * 100");
+                            System.out.println("All Math2\n" + allMath2);
+                            System.out.println("Refer to expression above for syntax");
                             System.out.println("Enter your Calculation! Or QUIT ");
+
                             String expression = scan.nextLine();
                             // a = 2
                             //pi = 3.1415
