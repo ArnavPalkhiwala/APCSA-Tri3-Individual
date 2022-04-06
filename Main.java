@@ -46,9 +46,18 @@ public class Main {
                         System.out.println(m);
                         System.out.println(m1);
                         System.out.println("");
+
                         System.out.println("Challenge 2");
+
                         Swap swap = new Swap();
-                        swap.run(10, 90);
+
+                        //user input for swaps
+                        System.out.println("Please input an integer: ");
+                        int num1= scan.nextInt();
+                        System.out.println("Please input another integer: ");
+                        int num2 = scan.nextInt();
+
+                        swap.run(num1, num2);
                         System.out.println("Challenge 3");
                         System.out.println("");
 
@@ -302,7 +311,7 @@ public class Main {
 
 
     }
-      
+      scan.close();
     }
 
 }
