@@ -40,9 +40,11 @@ public class Main {
 
                     case "1":
                         System.out.println("Challenge 1");
-                        int[][] keypad = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}, {0}};
-                        Matrix m = new Matrix(keypad);
+                       // int[][] keypad = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}, {0}};
+                        Matrix m = new Matrix(Matrix.keypad());
+                        Matrix m1 = new Matrix(Matrix.numbers());
                         System.out.println(m);
+                        System.out.println(m1);
                         System.out.println("");
                         System.out.println("Challenge 2");
                         Swap swap = new Swap();

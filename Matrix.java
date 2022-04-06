@@ -17,7 +17,8 @@ public class Matrix{
   }
 
   @Override
-  public String toString(){
+  public String toString() {
+      /*
     String s = "";
     String reverse = "";
     for(int i = 0; i < matrix.length; i++){
@@ -29,7 +30,38 @@ public class Matrix{
     for(int i = s.length() - 1; i >= 0; i--){
       reverse += s.charAt(i);
     }
-    return reverse;
+    return reverse;*/
+
+
+    //traverse matrix array
+    for(int i = 0; i<matrix.length; i++){
+      for(int j =0; j<matrix[i].length; j++){
+        if(matrix[i][j]>=0) {
+          System.out.print(Integer.toHexString(matrix[i][j]));
+          System.out.print(" ");
+        }
+        else{
+          System.out.print("  ");
+        }
+      }
+      System.out.println(" ");
+    }
+    System.out.println("");
+
+    //reverse traversing array
+    for (int i =matrix.length-1; i>=0; i--){
+      for(int j=matrix[i].length-1; j>=0; j--){
+        if(matrix[i][j]>=0) {
+          System.out.print(Integer.toHexString(matrix[i][j]));
+          System.out.print(" ");
+        }
+        else{
+          System.out.print("  ");
+        }
+      }
+      System.out.println(" ");
+    }
+    return "";
   }
   
 }
