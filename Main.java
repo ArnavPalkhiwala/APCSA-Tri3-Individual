@@ -16,12 +16,6 @@ public class Main {
                 System.out.println("-----------------------\n");
                 System.out.println("Choose from these choices");
                 System.out.println("-------------------------\n");
-    /*
-            System.out.println("1 - Challenge 1");
-            System.out.println("2 - Calculator");
-            System.out.println("3 - Sorting");   
-            System.out.println("0 - Quit");
-            */
 
                 //not hard coded menu
                 for (int i = 0; i < choices.length; i++) {
@@ -41,29 +35,14 @@ public class Main {
                     case "1":
                         System.out.println("Challenge 1");
                        // int[][] keypad = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}, {0}};
-                        Matrix m = new Matrix(Matrix.keypad());
-                        Matrix m1 = new Matrix(Matrix.numbers());
-                        System.out.println(m);
-                        System.out.println(m1);
-                        System.out.println("");
+                        String[] menu= new String[]{"1) Matrix", "2) Swap", "3) Queue fiddling"};
+                        for(int i=0;i<menu.length;i++){
+                            System.out.println(menu[i]);
+                        }
 
-                        System.out.println("Challenge 2");
-
-                        Swap swap = new Swap();
-
-                        //user input for swaps
-                        System.out.println("Please input an integer: ");
-                        int num1= scan.nextInt();
-                        System.out.println("Please input another integer: ");
-                        int num2 = scan.nextInt();
-
-                        swap.run(num1, num2);
-                        System.out.println("Challenge 3");
-                        System.out.println("");
-
-                        Challenge1 c1 = new Challenge1();
-                        c1.run();
-
+                        //challenge 1 menu that leads to matrix, swap and queue stuff
+                        String choice2= scan.nextLine();
+                        Main.challenge1menu(choice2);
                         break;
 
                     case "2":
@@ -316,6 +295,37 @@ public class Main {
 
     }
       scan.close();
+    }
+
+    //cleaning up menu code to make it more readable
+    public static void challenge1menu(String a){
+        if(a.equals("1")){
+            Matrix m = new Matrix(Matrix.keypad());
+            Matrix m1 = new Matrix(Matrix.numbers());
+            System.out.println(m);
+            System.out.println(m1);
+            System.out.println("");
+        }
+        else if(a.equals("2")){
+            Scanner scan =  new Scanner(System.in);
+            System.out.println("Challenge 2");
+
+            //user input for swaps
+            Swap swap = new Swap();
+            System.out.println("Please input an integer: ");
+            int num1= scan.nextInt();
+            System.out.println("Please input another integer: ");
+            int num2 = scan.nextInt();
+
+            swap.run(num1, num2);
+            System.out.println("Challenge 3");
+            System.out.println("");
+            scan.close();
+        }
+        else if(a.equals("3")){
+            Challenge1 c1 = new Challenge1();
+            c1.run();
+        }
     }
 
 }
