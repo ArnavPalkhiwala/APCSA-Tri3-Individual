@@ -13,8 +13,12 @@ public class Challenge1{
   void run(){
 
     Scanner s = new Scanner(System.in);
-    
-    System.out.println("1 for adding elements to queue or deleting, 3 for merging queues, 4 for reversing queues with stack, and 5 to exit ");
+
+    //less hardcoded menu for queue fiddling
+    String[] menu = new String[]{"1) add or delete elements in queue", "3) merge queue", "4) reversing queue", "5) Exit"};
+    for(int i=0;i<menu.length;i++) {
+      System.out.println(menu[i]);
+    }
 
     int choice = s.nextInt();
     
@@ -24,6 +28,7 @@ public class Challenge1{
     //Checking if is add or delete
     if(choice == 1){
       boolean stop = false;
+      //add function to queue
       while(!stop){
         System.out.print("Add or delete? ");
 
@@ -42,7 +47,7 @@ public class Challenge1{
         }
 
         System.out.println("Again? Type N to stop"); //check for conntinuation 
-        if(s.next().equals("N")){
+        if(s.next().equalsIgnoreCase("N")){
           stop = true; //stop here
         }
       }

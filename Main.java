@@ -40,13 +40,24 @@ public class Main {
 
                     case "1":
                         System.out.println("Challenge 1");
-                        int[][] keypad = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}, {0}};
-                        Matrix m = new Matrix(keypad);
+                       // int[][] keypad = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}, {0}};
+                        Matrix m = new Matrix(Matrix.keypad());
+                        Matrix m1 = new Matrix(Matrix.numbers());
                         System.out.println(m);
+                        System.out.println(m1);
                         System.out.println("");
+
                         System.out.println("Challenge 2");
+
                         Swap swap = new Swap();
-                        swap.run(10, 90);
+
+                        //user input for swaps
+                        System.out.println("Please input an integer: ");
+                        int num1= scan.nextInt();
+                        System.out.println("Please input another integer: ");
+                        int num2 = scan.nextInt();
+
+                        swap.run(num1, num2);
                         System.out.println("Challenge 3");
                         System.out.println("");
 
@@ -57,7 +68,11 @@ public class Main {
 
                     case "2":
                         try {
+                            Calculator allMath2 = new Calculator("200 % (300 + 5 + 300) / 200 + 1 * 100");
+                            System.out.println("All Math2\n" + allMath2);
+                            System.out.println("Refer to expression above for syntax");
                             System.out.println("Enter your Calculation! Or QUIT ");
+
                             String expression = scan.nextLine();
                             // a = 2
                             //pi = 3.1415
@@ -300,7 +315,7 @@ public class Main {
 
 
     }
-      
+      scan.close();
     }
 
 }
