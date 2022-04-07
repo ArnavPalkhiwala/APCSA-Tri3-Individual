@@ -18,11 +18,10 @@ public class Main {
                 System.out.println("-------------------------\n");
 
                 //not hard coded menu
-                for (int i = 0; i < choices.length; i++) {
-                    System.out.println(choices[i]);
-                }
+            for (String choice : choices) {
+                System.out.println(choice);
+            }
 
-                System.out.println("");
 
                 String choice1 = scan.nextLine();
 
@@ -36,8 +35,8 @@ public class Main {
                         System.out.println("Challenge 1");
                        // int[][] keypad = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}, {0}};
                         String[] menu= new String[]{"1) Matrix", "2) Swap", "3) Queue fiddling"};
-                        for(int i=0;i<menu.length;i++){
-                            System.out.println(menu[i]);
+                        for (String value : menu) {
+                            System.out.println(value);
                         }
 
                         //challenge 1 menu that leads to matrix, swap and queue stuff
@@ -91,7 +90,6 @@ public class Main {
                             System.out.println("4 - Insertion Sort");
                             System.out.println("5 - Analytics (Avg. Time, Swaps, Comparisons) and Best Sort");
                             System.out.println("0 - Quit");
-                            System.out.println("");
 
                             String sort = scan.nextLine();
 
@@ -208,7 +206,7 @@ public class Main {
                                     break;
 
                                 case "5":
-                                    ArrayList<Integer> comparisonList = new ArrayList<Integer>();
+                                    ArrayList<Integer> comparisonList = new ArrayList<>();
                                     comparisonList.add(insertionComparisons);
                                     comparisonList.add(selectionComparisons);
                                     comparisonList.add(mergeComparisons);
@@ -231,7 +229,7 @@ public class Main {
 
                                     System.out.println("Avg # of Comparisons: " + (comparisonList.get(0) + comparisonList.get(1)) / 2);
 
-                                    ArrayList<Integer> swapsList = new ArrayList<Integer>();
+                                    ArrayList<Integer> swapsList = new ArrayList<>();
                                     swapsList.add(insertionSwaps);
                                     swapsList.add(selectionSwaps);
                                     swapsList.add(mergeSwaps);
@@ -255,14 +253,14 @@ public class Main {
                                     System.out.println("Avg # of Swaps: " + (swapsList.get(0) + swapsList.get(1)) / 2);
 
 
-                                    ArrayList<Double> timeList = new ArrayList<Double>();
+                                    ArrayList<Double> timeList = new ArrayList<>();
                                     timeList.add(insertionTime);
                                     timeList.add(selectionTime);
                                     timeList.add(mergeTime);
                                     timeList.add(bubbleTime);
 
                                     double max2 = 0;
-                                    double min2 = 100000000;
+                                 double min2 = 100000000;
 
                                     for (int i = 0; i < timeList.size(); i++) {
                                         if (timeList.get(i) < min) {
@@ -299,32 +297,31 @@ public class Main {
 
     //cleaning up menu code to make it more readable
     public static void challenge1menu(String a){
-        if(a.equals("1")){
-            Matrix m = new Matrix(Matrix.keypad());
-            Matrix m1 = new Matrix(Matrix.numbers());
-            System.out.println(m);
-            System.out.println(m1);
-            System.out.println("");
-        }
-        else if(a.equals("2")){
-            Scanner scan =  new Scanner(System.in);
-            System.out.println("Challenge 2");
+        switch (a) {
+            case "1" -> {
+                Matrix m = new Matrix(Matrix.keypad());
+                Matrix m1 = new Matrix(Matrix.numbers());
+                System.out.println(m);
+                System.out.println(m1);
+            }
+            case "2" -> {
+                Scanner scan = new Scanner(System.in);
+                System.out.println("Challenge 2");
 
-            //user input for swaps
-            Swap swap = new Swap();
-            System.out.println("Please input an integer: ");
-            int num1= scan.nextInt();
-            System.out.println("Please input another integer: ");
-            int num2 = scan.nextInt();
-
-            swap.run(num1, num2);
-            System.out.println("Challenge 3");
-            System.out.println("");
-            scan.close();
-        }
-        else if(a.equals("3")){
-            Challenge1 c1 = new Challenge1();
-            c1.run();
+                //user input for swaps
+                Swap swap = new Swap();
+                System.out.println("Please input an integer: ");
+                int num1 = scan.nextInt();
+                System.out.println("Please input another integer: ");
+                int num2 = scan.nextInt();
+                swap.run(num1, num2);
+                System.out.println("Challenge 3");
+                scan.close();
+            }
+            case "3" -> {
+                Challenge1 c1 = new Challenge1();
+                c1.run();
+            }
         }
     }
 
