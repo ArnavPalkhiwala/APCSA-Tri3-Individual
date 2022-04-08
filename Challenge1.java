@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
@@ -129,9 +128,6 @@ public class Challenge1{
       System.out.println("Reversed queue" + queue); //reverse que
 
       run();
-    }
-
-    else{
     }
   }
 }

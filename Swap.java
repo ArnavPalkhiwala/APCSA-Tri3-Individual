@@ -1,9 +1,18 @@
 //something broke here
-//don't know what but I changed ur code a bit so that it was less complicated than it needed to be
+//don't know what but I changed ur code a bit so that it fit challenge description
 //it would break if i entered the same integer twice
 
 public class Swap{
-  void run(int num1, int num2){
+  private int value;
+  public Swap(int a){
+    value =a;
+  }
+  public void swap(Swap a){
+    int value= this.value;
+    this.value=a.value;
+    a.value=value;
+  }
+  public static void run(int num1, int num2){
   //  int[] r = {num1, num2};
 
     System.out.println("Before: " + num1 + " " + num2);
@@ -16,12 +25,9 @@ public class Swap{
         break;
       }
     }*/
-
-    //simpler swap
-    int temp= num1;
-    num1= num2;
-    num2=temp;
-
+    Swap a =  new Swap(num1);
+    Swap b =  new Swap(num2);
+    a.swap(b);
     System.out.println("After: " + num1 + " " + num2);
     
   }
