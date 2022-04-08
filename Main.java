@@ -124,20 +124,21 @@ public class Main {
                 System.out.println("Challenge 2");
 
                 //user input for swaps
-                Swap swap = new Swap();
                 System.out.println("Please input an integer: ");
                 int num1 = scan.nextInt();
                 System.out.println("Please input another integer: ");
                 int num2 = scan.nextInt();
-                swap.run(num1, num2);
+
+                Swap.run(num1, num2);
                 System.out.println("Challenge 3");
-                scan.close();
+
             }
             case "3" -> {
                 Challenge1 c1 = new Challenge1();
                 c1.run();
             }
         }
+
     }
 
     //sorting menu improved to remove redundancy
