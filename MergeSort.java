@@ -2,43 +2,23 @@ import java.time.Duration;
 import java.time.Instant;
 import java.util.ArrayList;
 
-public class MergeSort {
+public class MergeSort extends ParentSort{
     
-    private final ArrayList<Integer> data;
-    private final Duration timeElapsed;
-    static int sorts = 0;
-    static int comparisons = 0;
-    int lowerIndex = 0;
-    int higherIndex;
 
     public MergeSort(int size){
-        data = new ArrayList<>();
+       sort(size);
+    }
+    public void sort(int size){
         Instant start = Instant.now();
-        for (int i = 0; i < size; i++) {
-            data.add((int)(Math.random() * (size+1)));
-        }
-
+        super.sort(size);
         this.higherIndex = data.size()-1;
-
         intRun(data, lowerIndex, higherIndex);
-
-        Instant end = Instant.now();   
+        Instant end = Instant.now();
         this.timeElapsed = Duration.between(start, end);
+
     }
 
-    public MergeSort(ArrayList<Integer> sample) {
-        data = sample;
-        Instant start = Instant.now();
-
-        this.higherIndex = data.size()-1;
-
-        intRun(data, lowerIndex, higherIndex);
-
-        Instant end = Instant.now();   
-        this.timeElapsed = Duration.between(start, end);
-        
-    }
-
+//merge algo below
     public static void intRun(ArrayList<Integer> list, int low, int high){
 
         if(low < high){
@@ -52,7 +32,7 @@ public class MergeSort {
         
     }
     
-    private static void mergeMethod(ArrayList<Integer> list, int low, int middle, int high) {
+    public static void mergeMethod(ArrayList<Integer> list, int low, int middle, int high) {
         int leftSize = middle - low + 1;
         int rightSize = high - middle;
 
@@ -101,21 +81,5 @@ public class MergeSort {
             track++;
         }
 
-    }
-
-    public ArrayList<Integer> getData() {
-        return data;
-    }
-
-    public long getTimeElapsed() {
-        return timeElapsed.getNano();
-    }
-
-    public int getComparisons(){
-        return comparisons;
-    }
-
-    public int getSorts(){
-        return sorts;
     }
 }

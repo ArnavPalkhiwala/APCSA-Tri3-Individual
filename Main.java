@@ -32,6 +32,7 @@ public class Main {
                         break;
 
                     case "1":
+                        //menu user interface for challenge 1 category
                         System.out.println("Challenge 1");
                        // int[][] keypad = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}, {0}};
                         String[] menu= new String[]{"1) Matrix", "2) Swap", "3) Queue fiddling"};
@@ -45,6 +46,7 @@ public class Main {
                         break;
 
                     case "2":
+                        //calculator stuff
                         try {
                             Calculator allMath2 = new Calculator("200 % (300 + 5 + 300) / 200 + 1 * 100");
                             System.out.println("All Math2\n" + allMath2);
@@ -62,235 +64,48 @@ public class Main {
 
                         break;
 
+// sort algo menu start here
                     case "3":
-                        int bubbleComparisons = 0;
-                        int bubbleSwaps = 0;
-                        double bubbleTime = 0;
-
-                        int insertionComparisons = 0;
-                        int insertionSwaps = 0;
-                        double insertionTime = 0;
-
-                        int mergeComparisons = 0;
-                        int mergeSwaps = 0;
-                        double mergeTime = 0;
-
-                        int selectionComparisons = 0;
-                        int selectionSwaps = 0;
-                        double selectionTime = 0;
                         boolean run = true;
+
                         while (run) {
+
+
                             System.out.println("-----------------------\n");
                             System.out.println("Choose from these choices");
                             System.out.println("-------------------------\n");
 
-                            System.out.println("1 - Selection Sort");
-                            System.out.println("2 - Merge Sort");
-                            System.out.println("3 - Bubble Sort");
-                            System.out.println("4 - Insertion Sort");
-                            System.out.println("5 - Analytics (Avg. Time, Swaps, Comparisons) and Best Sort");
-                            System.out.println("0 - Quit");
-
-                            String sort = scan.nextLine();
-
-                            int sum = 0, TIMES = 12, SIZE = 5000, totalSwaps = 0;
-                            long time = 0;
-                            int comparison = 0;
-
-                            switch (sort) {
-
-                                case "1":
-                                    for (int i = 0; i < TIMES; i++) {
-                                        SelectionSort s = new SelectionSort(SIZE);
-                                        for (int j = 0; j < s.getData().size(); j++) {
-                                            // System.out.println(s.getData()); //line to see the data
-                                            sum += s.getData().get(j);
-                                        }
-                                        System.out.println("Average random: " + sum / ((i + 1) * SIZE));
-                                        System.out.println("Nanoseconds: " + s.getTimeElapsed());
-                                        time += s.getTimeElapsed();
-
-                                        comparison = s.getComparisons();
-                                        totalSwaps = s.getSorts();
-                                    }
-                                    System.out.println("Average random: " + sum / (TIMES * SIZE));
-                                    System.out.println("Total Nanoseconds: " + time);
-                                    System.out.println("Total Seconds: " + time / 1000000000.0);
-                                    System.out.println("Comparisons: " + comparison);
-                                    System.out.println("Swaps: " + totalSwaps);
-
-                                    selectionTime = (time / 1000000000.0);
-                                    selectionComparisons = comparison;
-                                    selectionSwaps = totalSwaps;
-
-                                    break;
-
-                                case "2":
-                                    for (int i = 0; i < TIMES; i++) {
-                                        MergeSort s = new MergeSort(SIZE);
-                                        for (int j = 0; j < s.getData().size(); j++) {
-                                            // System.out.println(s.getData()); //line to see the data
-                                            sum += s.getData().get(j);
-                                        }
-                                        System.out.println("Average random: " + sum / ((i + 1) * SIZE));
-                                        System.out.println("Nanoseconds: " + s.getTimeElapsed());
-                                        time += s.getTimeElapsed();
-
-                                        comparison = s.getComparisons();
-                                        totalSwaps = s.getSorts();
-                                    }
-                                    System.out.println("Average random: " + sum / (TIMES * SIZE));
-                                    System.out.println("Total Nanoseconds: " + time);
-                                    System.out.println("Total Seconds: " + time / 1000000000.0);
-                                    System.out.println("Comparisons: " + comparison);
-                                    System.out.println("Swaps: " + totalSwaps);
-
-                                    mergeTime = (time / 1000000000.0);
-                                    mergeComparisons = comparison;
-                                    mergeSwaps = totalSwaps;
-
-                                    break;
-
-
-                                case "3":
-                                    for (int i = 0; i < TIMES; i++) {
-                                        BubbleSort s = new BubbleSort(SIZE);
-                                        for (int j = 0; j < s.getData().size(); j++) {
-                                            // System.out.println(s.getData()); //line to see the data
-                                            sum += s.getData().get(j);
-                                        }
-                                        System.out.println("Average random: " + sum / ((i + 1) * SIZE));
-                                        System.out.println("Nanoseconds: " + s.getTimeElapsed());
-                                        time += s.getTimeElapsed();
-
-                                        comparison = s.getComparisons();
-                                        totalSwaps = s.getSorts();
-                                    }
-                                    System.out.println("Average random: " + sum / (TIMES * SIZE));
-                                    System.out.println("Total Nanoseconds: " + time);
-                                    System.out.println("Total Seconds: " + time / 1000000000.0);
-
-                                    bubbleTime = (time / 1000000000.0);
-                                    bubbleComparisons = comparison;
-                                    bubbleSwaps = totalSwaps;
-
-                                    System.out.println("Comparisons: " + comparison);
-                                    System.out.println("Swaps: " + totalSwaps);
-
-                                    break;
-
-
-                                case "4":
-                                    for (int i = 0; i < TIMES; i++) {
-                                        InsertionSort s = new InsertionSort(SIZE);
-                                        for (int j = 0; j < s.getData().size(); j++) {
-                                            // System.out.println(s.getData()); //line to see the data
-                                            sum += s.getData().get(j);
-                                        }
-                                        System.out.println("Average random: " + sum / ((i + 1) * SIZE));
-                                        System.out.println("Nanoseconds: " + s.getTimeElapsed());
-                                        time += s.getTimeElapsed();
-
-                                        comparison = s.getComparisons();
-                                        totalSwaps = s.getSorts();
-                                    }
-                                    System.out.println("Average random: " + sum / (TIMES * SIZE));
-                                    System.out.println("Total Nanoseconds: " + time);
-                                    System.out.println("Total Seconds: " + time / 1000000000.0);
-                                    insertionTime = (time / 1000000000.0);
-                                    insertionComparisons = comparison;
-                                    insertionSwaps = totalSwaps;
-                                    System.out.println("Comparisons: " + comparison);
-                                    System.out.println("Swaps: " + totalSwaps);
-
-                                    break;
-
-                                case "5":
-                                    ArrayList<Integer> comparisonList = new ArrayList<>();
-                                    comparisonList.add(insertionComparisons);
-                                    comparisonList.add(selectionComparisons);
-                                    comparisonList.add(mergeComparisons);
-                                    comparisonList.add(bubbleComparisons);
-
-                                    int max = 0;
-                                    int min = 100000000;
-
-                                    for (int i = 0; i < comparisonList.size(); i++) {
-                                        if (comparisonList.get(i) < min) {
-                                            min = comparisonList.get(i);
-                                        }
-                                        if (comparisonList.get(i) > max) {
-                                            max = comparisonList.get(i);
-                                        }
-                                    }
-
-                                    comparisonList.remove(comparisonList.indexOf(max));
-                                    comparisonList.remove(comparisonList.indexOf(min));
-
-                                    System.out.println("Avg # of Comparisons: " + (comparisonList.get(0) + comparisonList.get(1)) / 2);
-
-                                    ArrayList<Integer> swapsList = new ArrayList<>();
-                                    swapsList.add(insertionSwaps);
-                                    swapsList.add(selectionSwaps);
-                                    swapsList.add(mergeSwaps);
-                                    swapsList.add(bubbleSwaps);
-
-                                    max = 0;
-                                    min = 100000000;
-
-                                    for (int i = 0; i < swapsList.size(); i++) {
-                                        if (swapsList.get(i) < min) {
-                                            min = swapsList.get(i);
-                                        }
-                                        if (swapsList.get(i) > max) {
-                                            max = swapsList.get(i);
-                                        }
-                                    }
-
-                                    swapsList.remove(swapsList.indexOf(max));
-                                    swapsList.remove(swapsList.indexOf(min));
-
-                                    System.out.println("Avg # of Swaps: " + (swapsList.get(0) + swapsList.get(1)) / 2);
-
-
-                                    ArrayList<Double> timeList = new ArrayList<>();
-                                    timeList.add(insertionTime);
-                                    timeList.add(selectionTime);
-                                    timeList.add(mergeTime);
-                                    timeList.add(bubbleTime);
-
-                                    double max2 = 0;
-                                 double min2 = 100000000;
-
-                                    for (int i = 0; i < timeList.size(); i++) {
-                                        if (timeList.get(i) < min) {
-                                            min2 = timeList.get(i);
-                                        }
-                                        if (timeList.get(i) > max) {
-                                            max2 = timeList.get(i);
-                                        }
-                                    }
-
-                                    // timeList.remove(timeList.indexOf(max2)+1);
-                                    // timeList.remove(timeList.indexOf(min2)-1);
-
-                                    System.out.println("Avg Times: " + (timeList.get(0) + timeList.get(1)) / 2 + " seconds");
-
-                                    System.out.println("It is clear that merge sort is the best sorting algorithm because it has the most efficient time of " + mergeTime + " seconds, with " + mergeComparisons + " comparisons, and " + mergeSwaps + " swaps");
-
-                                    break;
-
-                                case "0":
-                                    run=false;
-                                    break;
+                            String[] sorts= new String[]{"1 - Selection Sort", "2 - Merge Sort", "3 - Bubble Sort", "4 - Insertion Sort", "5 - Analytics (Avg. Time, Swaps, Comparisons) and Best Sort", "0 - Quit"};
+                            for(String i: sorts){
+                                System.out.println(i);
+                                System.out.println("-----------");
                             }
 
+                            String sort = scan.nextLine();
+                            if(!sort.equals("5") && !sort.equals("0")) {
+                                //starts sorting algo based on user input
+
+                                Main.sortmenu(sort);
+                            }
+                            else if(sort.equals("5")){
+
+                                //perform analysis method/class here
+                                System.out.println(output.avgcompare());
+                                System.out.println(output.avgswaps());
+                                System.out.println(output.avgtime());
+
+                              //concluding statement
+                               System.out.println("It is clear that merge sort is the best sorting algorithm because it has the most efficient time of " + mergeTime + " seconds, with " + mergeComparison + " comparisons, and " + mergeSwap + " swaps");
+
+                            }
+                            else if(sort.equals("0")){
+                                run =false;
+                            }
+                            else{
+                                System.out.println("Invalid input");
+                            }
                         }
-
-
                 }
-
-
     }
       scan.close();
     }
@@ -325,4 +140,63 @@ public class Main {
         }
     }
 
+    //sorting menu improved to remove redundancy
+    static int mergeSwap;
+    static double mergeTime;
+    static int mergeComparison;
+    static Analysis output = new Analysis();
+public static void sortmenu(String choice){
+    int sum = 0, TIMES = 12, SIZE = 5000;
+
+    int totalSwaps = 0;
+    long time = 0;
+    int comparison = 0;
+    for (int i = 0; i < TIMES; i++) {
+
+        ParentSort s ;
+
+        //eliminating redundant code here by combining them
+        //through polymorphism
+        if(choice.equals("1")) {
+            s = new SelectionSort(SIZE);
+        }
+       else if (choice.equals("2")) {
+             s = new MergeSort(SIZE);
+        }
+       else if(choice.equals("4")) {
+           s = new InsertionSort(SIZE);
+        }
+       else{
+           s = new BubbleSort(SIZE);
+        }
+
+        for (int j = 0; j < s.getData().size(); j++) {
+            // System.out.println(s.getData()); //line to see the data
+            sum += s.getData().get(j);
+        }
+        System.out.println("Average random: " + sum / ((i + 1) * SIZE));
+        System.out.println("Nanoseconds: " + s.getTimeElapsed());
+        time += s.getTimeElapsed();
+
+        comparison = s.getComparisons();
+        totalSwaps = s.getSorts();
+    }
+    System.out.println("Average random: " + sum / (TIMES * SIZE));
+    System.out.println("Total Nanoseconds: " + time);
+    System.out.println("Total Seconds: " + time / 1000000000.0);
+    System.out.println("Comparisons: " + comparison);
+    System.out.println("Swaps: " + totalSwaps);
+
+    //setting up data for analysis
+    output.setSwaplist(totalSwaps);
+    output.setComparisonlist(comparison);
+    output.setTimeList(time);
+
+    //added this to try and keep owners original intent for code purpose
+        if(choice.equals("2")){
+            mergeSwap=totalSwaps;
+            mergeComparison=comparison;
+            mergeTime=time;
+        }
+    }
 }

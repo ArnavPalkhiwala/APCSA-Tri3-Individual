@@ -129,8 +129,5 @@ public class Challenge1{
 
       run();
     }
-
-    else{
-    }
   }
 }
