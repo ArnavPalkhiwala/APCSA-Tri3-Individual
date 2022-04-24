@@ -15,3 +15,20 @@
 | Friday   |I will review my mistakes on the FRQ and start another MC. I realize that the only way I can be prepared is if I do as much practice as possible, so that is exactly what I will do. |
 
 **I will follow these steps each week and do it with my team members so we can hold each other accountable for if we skip a day.**
+
+MCQ Corrections (Score 36/39):
+| Question     | My Answer | Correct Answer/Reasoning | 
+| ----------- | ----------- | ----------- |
+|3. ![Screen Shot 2022-04-24 at 2 58 05 PM](https://user-images.githubusercontent.com/25650329/164998378-20dd54b6-030b-4322-b86e-b3f08ee217ef.png) | A - "B" | Correct answer is B "B" because the fact that it is A obj = new B(); means that any common methods run will run it from the B calss; so running show will print out "B" | 
+|26. ![Screen Shot 2022-04-24 at 3 01 03 PM](https://user-images.githubusercontent.com/25650329/164998528-7c058326-aae8-4047-b893-017deb4e88bc.png)| B - "0 0 0 0 0 6 blackboard" | Correct answer is E - "1 2 3 4 5 6 blackboard" discussed in class that the primitive types themselves are not actually changed and a new arr is made so original arr not changed either| 
+|39. ![Screen Shot 2022-04-24 at 3 03 59 PM](https://user-images.githubusercontent.com/25650329/164998637-3c3eb11d-d9a2-402c-a24c-38af5c7c2b2b.png)| B - "Alex Alex Alex Alex Bob Carl" | Correct Answer is C "Alex Bob Carl Alex Alex Alex" because the set method won't print anything new itself and so the first time, the original array is printing. Only the second time will the updated and new array be printed which makes sense now.| 
+
+[FRQ Repl](https://replit.com/@ArnavPalkhiwala/2015frq)
+
+![Screen Shot 2022-04-24 at 2 53 28 PM](https://user-images.githubusercontent.com/25650329/164998211-7d3cf516-99fd-444e-8359-6cde98eb1ae1.png)
+![Screen Shot 2022-04-24 at 2 53 38 PM](https://user-images.githubusercontent.com/25650329/164998215-cef4a8d4-6139-4514-81ba-bc723354d960.png)
+![Screen Shot 2022-04-24 at 2 53 51 PM](https://user-images.githubusercontent.com/25650329/164998225-808fb778-db20-4e2b-bf9d-a346c7ff49aa.png)
+![Screen Shot 2022-04-24 at 2 53 59 PM](https://user-images.githubusercontent.com/25650329/164998231-09001964-d607-4ce9-8f06-ccc3684018a0.png)
+![Screen Shot 2022-04-24 at 2 54 07 PM](https://user-images.githubusercontent.com/25650329/164998236-29d7c86f-0519-42d9-88bc-1af6d357b8ec.png)
+
+
