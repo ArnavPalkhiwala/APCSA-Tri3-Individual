@@ -16,6 +16,13 @@
 
 **I will follow these steps each week and do it with my team members so we can hold each other accountable for if we skip a day.**
 
+MCQ Score (Score 33/40):
+
+Pictures of Handwritten FRQ:
+<img width="480" alt="Screen Shot 2022-05-03 at 10 17 12 AM" src="https://user-images.githubusercontent.com/25650329/166505242-abd131c2-d51a-430d-8a8e-040c07481106.png">
+<img width="516" alt="Screen Shot 2022-05-03 at 10 17 18 AM" src="https://user-images.githubusercontent.com/25650329/166505253-ffe84f79-c3ff-4304-af31-a8647405fd46.png">
+
+
 MCQ Corrections (Score 36/39):
 | Question     | My Answer | Correct Answer/Reasoning | 
 | ----------- | ----------- | ----------- |
