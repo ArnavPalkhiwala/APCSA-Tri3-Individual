@@ -18,7 +18,7 @@
 
 MCQ Score (Score 33/40):
 
-Pictures of Handwritten FRQ:
+Pictures of Handwritten FRQ: *No corrections needed
 <img width="480" alt="Screen Shot 2022-05-03 at 10 17 12 AM" src="https://user-images.githubusercontent.com/25650329/166505242-abd131c2-d51a-430d-8a8e-040c07481106.png">
 <img width="516" alt="Screen Shot 2022-05-03 at 10 17 18 AM" src="https://user-images.githubusercontent.com/25650329/166505253-ffe84f79-c3ff-4304-af31-a8647405fd46.png">
 
