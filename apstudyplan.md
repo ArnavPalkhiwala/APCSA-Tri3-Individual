@@ -6,7 +6,7 @@
 * I can also look online on YouTube and CollegeBoard because they both have great videos with content that can clarify any questions I have on content that I did not understand in class and through the practice exercises I did
 * Lastly, I will review all of the frqs we did last trimester and redo them so I can make sure I retained all of the knowledge I learned last trimester -> this will not only help me practice for the type of questions on the AP EXAM but also reinforce content I am not confident in
 
-| Week 1 (day)      | Task/Work | 
+| Week 2 (day)      | Task/Work | 
 | ----------- | ----------- |
 | Monday      | Today I will begin studying from the 5 Steps to 5 Book and do a good review of units 1-4 to address any points of confusion. I will then take one of their practice multiple choice questions and review my responses to ensure that I am doing everything correctly and understand all of thsoe topics.       | 
 | Tuesday  | I will take the 2014 MC practice test -> after taking it: I feel confident considering I received a 36/39 on the exam and still finished with a few minutes. There would be around 30 more minutes provided on the AP Exam so I feel comfortable  doing everyhting in time.      |
